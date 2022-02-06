@@ -30,12 +30,28 @@
   font-display: swap;
 }
 
+:root {
+  --primary-white: #ffffff;
+  --primary-light: #f0f0f0;
+  --primary-lightgray: #dcdcdc;
+  --primary-dark: #444444;
+  --primary-black: #000000;
+
+  --additional-yellow: #ffe17f;
+  --additional-yellow-hover: #ffc700;
+  --additional-purple: #af4fff;
+
+  --status-error: #ff3d3d;
+  --status-warning: #fd912e;
+  --status-success: #08af00;
+}
+
 body {
   font-family: "Rubik", sans-serif;
   font-size: 18px;
   line-height: 30px;
-  background-color: #ffffff;
-  color: #444444;
+  background-color: var(--primary-white);
+  color: var(--primary-dark);
 }
 
 .button {
@@ -44,18 +60,18 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.2em;
   text-decoration: none;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .page-header {
-  background-color: #ffe17f;
+  background-color: var(--additional-yellow);
 }
 
 .section-header {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .navigation-list {
@@ -73,7 +89,7 @@ body {
 }
 
 .navigation-link {
-  color: #000000;
+  color: var(--primary-black);
   text-decoration: none;
 }
 
@@ -88,7 +104,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .promo-table-header {
@@ -98,7 +114,7 @@ body {
 
 .promo-table-cell {
   font-size: 36px;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .category-items {
@@ -109,18 +125,18 @@ body {
   font-family: "Raleway", sans-serif;
   line-height: 24px;
   letter-spacing: -0.02em;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .services {
-  background-color: #f0f0f0;
+  background-color: var(--primary-light);
 }
 
 .service-title {
   font-family: "Raleway", sans-serif;
   font-size: 50px;
   line-height: 50px;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .special-delivery-title {
@@ -138,7 +154,7 @@ body {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.02em;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .contacts-subtitle {
@@ -147,7 +163,7 @@ body {
 }
 
 .contacts-phone {
-  color: #444444;
+  color: var(--primary-dark);
   text-decoration: none;
 }
 
@@ -156,7 +172,7 @@ body {
 }
 
 .mail-subscription {
-  background-color: #f0f0f0;
+  background-color: var(--primary-light);
 }
 
 .subscription-form input {
@@ -164,8 +180,8 @@ font: inherit;
 }
 
 .page-footer {
-  background-color: #444444;
-  color: #ffffff;
+  background-color: var(--primary-dark);
+  color: var(--primary-white);
 }
 
 .footer-adress-text {
@@ -182,11 +198,11 @@ font: inherit;
   line-height: 21px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #ffffff;
+  color: var(--primary-white);
 }
 
 .footer-phone {
-  color: #ffffff;
+  color: var(--primary-white);
 }
 
 .footer-social {
@@ -194,7 +210,7 @@ font: inherit;
 }
 
 .footer-social-button {
-  color: #ffffff;
+  color: var(--primary-white);
 }
 
 .breadcrumbs {
@@ -205,15 +221,15 @@ font: inherit;
   font-size: 16px;
   line-height: 19px;
   text-decoration: none;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .catalog-products {
-  background-color: #f0f0f0;
+  background-color: var(--primary-light);
 }
 
 .product-list-container {
-  background-color: #ffffff;
+  background-color: var(--primary-white);
 }
 
 .catalog-products-filter {
@@ -221,14 +237,14 @@ font: inherit;
   line-height: 19px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .catalog-filter-title {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.02em;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .catalog-filter-list {
@@ -238,7 +254,7 @@ font: inherit;
 .control {
   font-size: 16px;
   line-height: 19px;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .catalog-products-sort {
@@ -246,12 +262,12 @@ font: inherit;
   line-height: 19px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .select-control {
   font: inherit;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .product-list {
@@ -260,7 +276,7 @@ font: inherit;
 
 .product-card-link {
   text-decoration: none;
-  color: #000000;
+  color: var(--primary-black);
 }
 
 .product-card-title {
@@ -287,6 +303,6 @@ font: inherit;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
-  color: #444444;
+  color: var(--primary-dark);
   opacity: 30%;
 }
