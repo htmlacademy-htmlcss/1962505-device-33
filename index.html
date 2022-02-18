@@ -10,15 +10,17 @@
 <body>
   <header class="page-header">
     <div class="align-container">
-      <a href="#" class="navigation-logo">
+      <a href="#" class="navigation-logo-link">
         <img class="header-logo" src="images/logos/header-logo.svg" width="145" height="36"
           alt="Логотип магазина Девайс">
       </a>
       <nav class="navigation">
         <div class="navigation-wrapper">
           <form class="search-form" action="https://echo.htmlacademy.ru/" method="get">
-            <input type="text" name="searh" placeholder="Текст поиска">
-            <button class="search-button" type="submit">Найти</button>
+            <div class="search">
+              <input type="text" name="searh" placeholder="Текст поиска">
+              <button class="search-button" type="submit">Найти</button>
+            </div>
           </form>
           <ul class="navigation-list navigation-user">
             <li class="navigation-item"><a href="#" class="navigation-link enter-link">Войти</a></li>
@@ -84,16 +86,12 @@
                   </button>
                 </li>
               </ol>
-              <table class="promo-table">
-                <thead>
-                  <th class="promo-table-header">Дальность полета</th>
-                  <th class="promo-table-header">Радиус поражения</th>
-                </thead>
-                <tr>
-                  <td class="promo-table-cell">800 м</td>
-                  <td class="promo-table-cell">50 м</td>
-                </tr>
-              </table>
+              <dl class="promo-table">
+                <dt class="promo-table-header">Дальность полета</dt>
+                <dd class="promo-table-cell">800 м</dd>
+                <dt class="promo-table-header">Радиус поражения</dt>
+                <dd class="promo-table-cell">50 м</dd>
+              </dl>
             </div>
           </li>
           <li class="slider-item">
@@ -131,14 +129,10 @@
                   </button>
                 </li>
               </ol>
-              <table class="promo-table">
-                <thead>
-                  <th class="promo-table-header">Без подзарядки</th>
-                </thead>
-                <tr>
-                  <td class="promo-table-cell">48 часов</td>
-                </tr>
-              </table>
+              <dl class="promo-table">
+                <dt class="promo-table-header">Без подзарядки</dt>
+                <dd class="promo-table-cell">48 часов</dd>
+              </dl>
             </div>
           </li>
           <li class="slider-item">
@@ -175,18 +169,14 @@
                   </button>
                 </li>
               </ol>
-              <table class="promo-table">
-                <thead>
-                  <th class="promo-table-header">Длина палки</th>
-                  <th class="promo-table-header">Вес палки</th>
-                  <th class="promo-table-header">Материал</th>
-                </thead>
-                <tr>
-                  <td class="promo-table-cell">8,5 м</td>
-                  <td class="promo-table-cell">5 кг</td>
-                  <td class="promo-table-cell">Карбон</td>
-                </tr>
-              </table>
+              <dl class="promo-table">
+                <dt class="promo-table-header">Длина палки</dt>
+                <dd class="promo-table-cell">8,5 м</dd>
+                <dt class="promo-table-header">Вес палки</dt>
+                <dd class="promo-table-cell">5 кг</dd>
+                <dt class="promo-table-header">Материал</dt>
+                <dd class="promo-table-cell">Карбон</dd>
+              </dl>
             </div>
           </li>
         </ul>
@@ -289,8 +279,10 @@
         <p class="subscription-description">Еженедельный дайджест с обзорами новинок, длительными тест-драйвами,
           распаковками, а также акции, спецпредложения и вот это вот всё.</p>
         <form class="subscription-form" action="https://echo.htmlacademy.ru/" method="post">
-          <input type="email" name="mail" placeholder="Ваш e-mail">
-          <button class="button subscription-button" type="submit">Подписаться</button>
+          <div class="subscription">
+            <input type="email" name="mail" placeholder="Ваш e-mail">
+            <button class="button subscription-button" type="submit">Подписаться</button>
+          </div>
         </form>
         <span class="is-free">Это бесплатно</span>
       </div>
