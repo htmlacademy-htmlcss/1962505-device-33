@@ -90,8 +90,23 @@ body {
 }
 
 .page-header .align-container {
-  background-color: var(--additional-yellow);
+  position: relative;
   margin-top: 40px;
+  padding: 43px 50px 12px 50px;
+  box-sizing: border-box;
+  background-color: var(--additional-yellow);
+
+}
+
+.navigation-logo-link {
+  position: absolute;
+  top: -22px;
+  left: 60px;
+  display: block;
+}
+
+.header-logo {
+  display: block;
 }
 
 .section-header {
@@ -108,10 +123,6 @@ body {
   list-style: none;
 }
 
-.navigation-user:first-of-type {
-  margin-right: auto;
-}
-
 .navigation-main {
   width: 600px;
   justify-content: flex-end;
@@ -119,17 +130,34 @@ body {
   padding: 0;
 }
 
-.search-form input {
-  width: 400px;
+.search {
+  display: grid;
+  grid-template-columns: 359px 1fr;
+  width: 517px;
+  height: 40px;
   margin-left: 10px;
+}
+
+
+.search-form input {
+  padding: 0;
+  padding-left: 48px;
+  font-family: inherit;
   font-size: 16px;
   line-height: 20px;
+  background-color: var(--additional-yellow);
+  border: 2px solid var(--primary-black);
+  border-radius: 50px 0px 0px 50px;
 }
 
 .search-button {
-  margin-right: 26px;
+  padding: 0;
   font-size: 16px;
   line-height: 20px;
+  background-color: var(--additional-yellow);
+  border: 2px solid var(--primary-black);
+  border-left: none;
+  border-radius: 0px 50px 50px 0px;
 }
 
 .navigation-link {
@@ -152,7 +180,12 @@ body {
 .navigation-wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 0 50px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.navigation-wrapper:last-of-type {
+  margin-bottom: 0;
 }
 
 .navigation-main .navigation-link,
@@ -191,12 +224,23 @@ body {
   color: var(--primary-black);
 }
 
+.promo-table {
+  display: grid;
+  row-gap: 12px;
+  column-gap: 40px;
+  grid-template-columns: repeat(3, max-content);
+  margin: 0;
+}
+
 .promo-table-header {
+  grid-row: 2;
   font-weight: 400;
   font-size: 16px;
 }
 
 .promo-table-cell {
+  grid-row: 1;
+  margin: 0;
   font-size: 36px;
   color: var(--primary-black);
 }
@@ -277,11 +321,56 @@ body {
 }
 
 .mail-subscription {
+  padding-top: 64px;
+  padding-bottom: 56px;
   background-color: var(--primary-light);
 }
 
+.mail-subscription .align-container {
+  display: grid;
+  grid-template-columns: repeat(6, 160px);
+  grid-template-rows: auto auto;
+  row-gap: 144px;
+  column-gap: 40px;
+}
+
+.subscription-title {
+  grid-area: 1/1/2/3;
+  margin: 0;
+}
+
+.subscription-description {
+  grid-area: 1/4/2/-1;
+  align-self: end;
+  margin: 0;
+}
+
+.subscription-form {
+  grid-area: 2/1/3/-2;
+}
+
+.is-free {
+  grid-area: 2/-2/3/-1;
+}
+
+.subscription {
+  display: grid;
+  grid-template-columns: 557px 1fr;
+  width: 810px;
+  height: 57px;
+}
+
 .subscription-form input {
+  padding-left: 16px;
   font: inherit;
+  background-color: var(--primary-light);
+  border: none;
+  border-bottom: 3px solid var(--primary-lightgray);
+}
+
+.subscription-button {
+  background-color: var(--primary-light);
+  border: 3px solid var(--primary-lightgray);
 }
 
 .page-footer {
@@ -291,21 +380,28 @@ body {
 }
 
 .footer-logo {
-  margin-bottom: 10px;
+  display: block;
+  margin-bottom: 15px;
 }
 
 .footer-info-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 240px 1fr 210px;
+  column-gap: 102px;
   margin-bottom: 35px;
+}
+
+.footer-adress {
+  align-self: start;
 }
 
 .footer-adress-text {
   width: 240px;
   margin: 0;
-  padding-top: 25px;
-  margin-right: 110px;
+  padding-top: 20px;
+  margin-right: 102px;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 20px;
 }
 
 .footer-navigation-list {
@@ -320,7 +416,7 @@ body {
 }
 
 .footer-navigation-list .navigation-item:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 11px;
 }
 
 .footer-navigation-link {
@@ -335,11 +431,12 @@ body {
 
 .footer-phone {
   display: block;
-  width: 200px;
   align-self: center;
+  justify-self: end;
   padding: 10px 0px 10px 10px;
-  text-align: end;
   font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 20px;
   color: var(--primary-white);
 }
 
@@ -380,10 +477,18 @@ body {
   color: var(--primary-white);
 }
 
+.academy-logo {
+  display: block;
+}
+
+.inner-header {
+  padding-top: 35px;
+}
+
 .inner-header-title {
   margin: 0;
-  margin-bottom: 16px;
-  padding-top: 35px;
+  margin-bottom: 15px;
+  padding-left: 60px;
 }
 
 .breadcrumbs {
@@ -392,10 +497,12 @@ body {
   margin: 0;
   margin-bottom: 35px;
   padding: 0;
+  padding-left: 60px;
 }
 
 .breadcrumbs-item {
   margin-right: 36px;
+  line-height: 19px;
 }
 
 .breadcrumbs-item:last-child {
@@ -418,18 +525,19 @@ body {
 }
 
 .product-list-container {
-  padding: 0 40px;
+  padding: 70px 40px 0px 40px;
   padding-bottom: 78px;
   background-color: var(--primary-white);
 }
 
 .catalog-products-filter {
   width: 200px;
-  padding: 0 60px;
+  padding: 20px 60px 0px 60px;
 }
 
 .catalog-products-filter-text {
   font-family: "Raleway", sans-serif;
+  font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -455,11 +563,12 @@ body {
 
 .catalog-sort {
   width: 760px;
-  padding: 0 40px;
+  padding: 20px 40px;
 }
 
 .catalog-sort-text {
   font-family: "Raleway", sans-serif;
+  font-size: 16px;
   line-height: 19px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -472,17 +581,43 @@ body {
 }
 
 .product-list {
+  display: grid;
+  grid-template-columns: 360px 360px;
+  column-gap: 40px;
+  row-gap: 44px;
   margin: 0;
+  margin-bottom: 44px;
   padding: 0;
   list-style: none;
 }
 
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+}
+
 .product-card-link {
+  display: block;
   text-decoration: none;
   color: var(--primary-black);
 }
 
+.product-card-image {
+  display: block;
+  object-fit: contain;
+  margin-bottom: 32px;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+}
+
 .product-card-title {
+  width: 220px;
+  margin: 0;
+  font-size: inherit;
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.02em;
@@ -498,7 +633,7 @@ body {
   font-size: 16px;
   line-height: 19px;
   margin-bottom: 44px;
-  padding: 18px;
+  padding: 16px;
   background-color: var(--primary-white);
   border-width: 3px;
   border-color: var(--primary-lightgray);
