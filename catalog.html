@@ -10,8 +10,8 @@
 <body>
   <header class="page-header">
     <div class="align-container">
-      <a href="../index.html" class="navigation-logo-link">
-        <img class="header-logo" src="images/logos/header-logo.svg" width="145" height="36"
+      <a href="index.html" class="navigation-logo-link">
+        <img class="header-logo logo" src="images/logos/header-logo.svg" width="145" height="36"
           alt="Логотип магазина Девайс">
       </a>
       <nav class="navigation">
@@ -31,15 +31,28 @@
             <li class="navigation-item"><a href="#" class="navigation-link cart-link">Корзина</a></li>
           </ul>
         </div>
-        <div class="navigation-wrapper">
-          <div class="navigation-item"><a href="сatalog.html" class="navigation-link navigation-link-catalog">Каталог
-              товаров</a></div>
+        <div class="navigation-wrapper catalog-closed">
+          <div class="navigation-item navigation-catalog">
+            <a href="catalog.html" class="navigation-link navigation-link-catalog">
+              Каталог товаров</a>
+            <button class="catalog-open-button"></button>
+          </div>
           <ul class="navigation-list navigation-main">
-            <li class="navigation-item"><a href="#" class="navigation-link">Доставка</a></li>
+            <li class="navigation-item"><a href="#" class="navigation-link <!--navigation-link-active-->">Доставка</a>
+            </li>
             <li class="navigation-item"><a href="#" class="navigation-link">Гарантия</a></li>
             <li class="navigation-item"><a href="#" class="navigation-link">Контакты</a></li>
           </ul>
         </div>
+        <ul class="catalog-header">
+          <li class="catalog-header-item"><a href="#" class="catalog-header-link <!--catalog-link-active-->">Виртуальная
+              реальность</a></li>
+          <li class="catalog-header-item"><a href="catalog.html" class="catalog-header-link">Моноподы для cелфи</a></li>
+          <li class="catalog-header-item"><a href="#" class="catalog-header-link">Экшн-камеры</a></li>
+          <li class="catalog-header-item"><a href="#" class="catalog-header-link">Фитнес-браслеты</a></li>
+          <li class="catalog-header-item"><a href="#" class="catalog-header-link">Умные часы</a></li>
+          <li class="catalog-header-item"><a href="#" class="catalog-header-link">Квадрокоптеры</a></li>
+        </ul>
       </nav>
     </div>
   </header>
@@ -120,17 +133,19 @@
                   </li>
                 </ul>
               </fieldset>
-              <button class="button" type="submit">Показать</button>
+              <button class="button button-yellow filter-show-button" type="submit">Показать</button>
             </form>
           </div>
           <div class="catalog-column-container">
             <div class="catalog-sort">
               <span class="catalog-sort-text">Сортировка:</span>
-              <select class="select-control">
-                <option value="popular">Популярные</option>
-                <option value="cheap">Дешёвые</option>
-                <option value="expensive">Дорогие</option>
-              </select>
+              <div class="select-wrapper">
+                <select class="select-control">
+                  <option value="popular">Популярные</option>
+                  <option value="cheap">Дешёвые</option>
+                  <option value="expensive">Дорогие</option>
+                </select>
+              </div>
               <button class="sort-button sort-from-bottom">
                 <span class="visually-hidden">Сортировать снизу вверх</span>
               </button>
@@ -141,9 +156,10 @@
             <div class="product-list-container">
               <ul class="product-list">
                 <li class="product-card">
-                  <a href="#" class="product-card-link">
+                  <a href="#" class="product-card-link product-image-link">
                     <img class="product-card-image" src="images/catalog/product-1.jpg" width="360" height="380"
                       alt="Любительская селфи-палка">
+                    <span class="button button-yellow catalog-more-button">Подробнее</span>
                   </a>
                   <div class="product-info">
                     <a href="#" class="product-card-link">
@@ -152,10 +168,11 @@
                     <b class="product-price">500 ₽</b>
                   </div>
                 </li>
-                <li class="product-card">
-                  <a href="#" class="product-card-link">
+                <li class="product-card new-product">
+                  <a href="#" class="product-card-link product-image-link">
                     <img class="product-card-image" src="images/catalog/product-2.jpg" width="360" height="380"
                       alt="Профессиональная селфи-палка">
+                    <span class="button button-yellow catalog-more-button">Подробнее</span>
                   </a>
                   <div class="product-info">
                     <a href="#" class="product-card-link">
@@ -165,9 +182,10 @@
                   </div>
                 </li>
                 <li class="product-card">
-                  <a href="#" class="product-card-link">
+                  <a href="#" class="product-card-link product-image-link">
                     <img class="product-card-image" src="images/catalog/product-3.jpg" width="360" height="380"
                       alt="Непотопляемая селфи-палка">
+                    <span class="button button-yellow catalog-more-button">Подробнее</span>
                   </a>
                   <div class="product-info">
                     <a href="#" class="product-card-link">
@@ -177,9 +195,10 @@
                   </div>
                 </li>
                 <li class="product-card">
-                  <a href="#" class="product-card-link">
+                  <a href="#" class="product-card-link product-image-link">
                     <img class="product-card-image" src="images/catalog/product-4.jpg" width="360" height="380"
                       alt="Селфи-палка «Следуй за мной»">
+                    <span class="button button-yellow catalog-more-button">Подробнее</span>
                   </a>
                   <div class="product-info">
                     <a href="#" class="product-card-link">
@@ -191,10 +210,11 @@
               </ul>
               <button class="button upload-more-button" type="button">Загрузить ещё</button>
               <div class="pagination">
-                <a href="#" class="button pagination-prev">Назад</a>
+                <a href="#" class="button pagination-button pagination-prev"><span
+                    class="pagination-button-text">Назад</span></a>
                 <ul class="pagination-list">
                   <li class="pagination-item">
-                    <a href="#" class="pagination-link">1</a>
+                    <a href="#" class="pagination-link pagination-link-current">1</a>
                   </li>
                   <li class="pagination-item">
                     <a href="#" class="pagination-link">2</a>
@@ -209,7 +229,8 @@
                     <a href="#" class="pagination-link">15</a>
                   </li>
                 </ul>
-                <a href="#" class="button pagination-next">Вперёд</a>
+                <a href="#" class="button pagination-button pagination-next"><span
+                    class="pagination-button-text">Вперёд</span></a>
               </div>
             </div>
           </div>
@@ -221,7 +242,10 @@
 
   <footer class="page-footer">
     <div class="align-container">
-      <img class="footer-logo" src="images/logos/footer-logo.svg" width="145" height="36" alt="Логотип магазина Девайс">
+      <a href="#" class="footer-logo-link">
+        <img class="footer-logo logo" src="images/logos/footer-logo.svg" width="145" height="36"
+          alt="Логотип магазина Девайс">
+      </a>
       <div class="footer-info-wrapper">
         <adress class="footer-adress">
           <p class="footer-adress-text">Санкт-Петербург, набережная реки Карповки, 5, литера П.</p>
@@ -236,24 +260,114 @@
       <div class="footer-social-wrapper">
         <ul class="footer-social">
           <li class="footer-social-item">
-            <a href="#" class="footer-social-button">
+            <a href="#" class="footer-social-button fb">
+              <svg class="icon" width="9" height="19" viewBox="0 0 9 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_11534_7022)">
+                  <g clip-path="url(#clip1_11534_7022)">
+                    <path
+                      d="M6.5 3.35693H9V0.356934H5.6C2.8 0.356934 2 2.05693 2 4.55693V6.35693H0V9.35693H2V18.3569H5V9.35693H8.3L8.9 6.35693H5V4.85693C5 4.05693 5.3 3.35693 6.5 3.35693Z"
+                      fill="black" />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_11534_7022">
+                    <rect width="9" height="18" fill="white" transform="translate(9 18.3569) rotate(-180)" />
+                  </clipPath>
+                  <clipPath id="clip1_11534_7022">
+                    <rect width="9" height="18" fill="white" transform="translate(0 0.356934)" />
+                  </clipPath>
+                </defs>
+              </svg>
               <span class="visually-hidden">Фейсбук</span>
             </a>
           </li>
           <li class="footer-social-item">
-            <a href="#" class="footer-social-button">
+            <a href="#" class="footer-social-button instagram">
+              <svg class="icon" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_11534_7004)">
+                  <g clip-path="url(#clip1_11534_7004)">
+                    <path
+                      d="M8 10.3569C9.10457 10.3569 10 9.4615 10 8.35693C10 7.25236 9.10457 6.35693 8 6.35693C6.89543 6.35693 6 7.25236 6 8.35693C6 9.4615 6.89543 10.3569 8 10.3569Z"
+                      fill="black" />
+                    <path
+                      d="M14.7 1.65693C13.8 0.756934 12.7 0.356934 11.3 0.356934H4.7C1.9 0.356934 0 2.25693 0 5.05693V11.6569C0 13.0569 0.4 14.2569 1.4 15.0569C2.3 15.9569 3.4 16.3569 4.7 16.3569H11.3C12.7 16.3569 13.9 15.9569 14.7 15.0569C15.5 14.1569 16 13.0569 16 11.6569V5.05693C16 3.65693 15.6 2.45693 14.7 1.65693ZM8 12.4569C5.8 12.4569 3.9 10.6569 3.9 8.35693C3.9 6.05693 5.8 4.25693 8 4.25693C10.2 4.25693 12.1 6.05693 12.1 8.35693C12.1 10.6569 10.2 12.4569 8 12.4569ZM12.6 5.05693C11.9 5.05693 11.3 4.55693 11.3 3.75693C11.3 2.95693 11.8 2.45693 12.6 2.45693C13.3 2.45693 13.9 3.05693 13.9 3.75693C13.9 4.45693 13.3 5.05693 12.6 5.05693Z"
+                      fill="black" />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_11534_7004">
+                    <rect width="16" height="16" fill="white" transform="translate(16 16.3569) rotate(-180)" />
+                  </clipPath>
+                  <clipPath id="clip1_11534_7004">
+                    <rect width="16" height="16" fill="white" transform="translate(0 0.356934)" />
+                  </clipPath>
+                </defs>
+              </svg>
               <span class="visually-hidden">Инстаграм</span>
             </a>
           </li>
           <li class="footer-social-item">
-            <a href="#" class="footer-social-button">
+            <a href="#" class="footer-social-button twitter">
+              <svg class="icon" width="16" height="15" viewBox="0 0 16 15" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_11534_7043)">
+                  <g clip-path="url(#clip1_11534_7043)">
+                    <path
+                      d="M10.3467 0.511449C11.9467 0.0134736 13.12 0.810234 13.76 1.60699C14.2933 1.4078 14.9333 1.20861 15.5733 1.00942C15.5733 1.80618 15.04 2.40375 14.72 2.60294C15.4667 2.80213 16 2.20456 16 2.20456C15.8933 3.10092 15.04 3.89768 14.5067 4.09687C14.2933 10.3714 11.52 14.4547 5.01333 14.3552C4.48 14.3552 5.12 14.3552 4.58667 14.3552C4.26667 14.3552 0.64 13.9568 0 12.5624C2.13333 12.7616 3.62667 12.1641 4.37333 11.4669C3.52 11.1681 1.81333 11.0685 1.6 8.67824C1.92 8.87743 2.13333 8.97702 2.77333 8.87743C1.6 8.08067 0.32 7.3835 0.426667 5.3916C0.746667 5.69039 1.38667 5.88958 1.70667 5.78998C1.06667 5.59079 -0.213333 2.70254 0.853333 1.20861C2.56 2.90173 4.37333 4.59484 7.57333 4.69444C7.78667 2.60294 8.64 1.20861 10.3467 0.511449Z"
+                      fill="black" />
+                  </g>
+                </g>
+                <defs>
+                  <clipPath id="clip0_11534_7043">
+                    <rect width="16" height="14" fill="white" transform="translate(16 14.3569) rotate(-180)" />
+                  </clipPath>
+                  <clipPath id="clip1_11534_7043">
+                    <rect width="16" height="14" fill="white" transform="translate(0 0.356934)" />
+                  </clipPath>
+                </defs>
+              </svg>
               <span class="visually-hidden">Твиттер</span>
             </a>
           </li>
         </ul>
         <a href="https://htmlacademy.ru" class="copyright">
-          <img class="academy-logo" src="images/logos/html-academy-logo.svg" width="115" height="33"
-            alt="логотип HTML-академии">
+          <svg class="academy-logo" width="115" height="33" viewBox="0 0 115 33" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 12.9V15.5H2.5V12.9H0Z" fill="#FFC700" />
+            <path
+              d="M11.6 4.5C10 4.5 8.8 5.2 8 6.2H7.9V0H5.9V15.5H7.9V10.2C7.9 8.1 9.2 6.6 11.2 6.6C13 6.6 14.1 8 14.1 9.8V15.5H16.1V9.4C16.2 6.4 14.3 4.5 11.6 4.5Z"
+              fill="#FFC700" />
+            <path
+              d="M26.6 4.8H21.8V1.1H19.8V4.9H17.9V6.9H19.8V12.9C19.8 14.6 20.8 15.6 22.5 15.6H26.6V13.6H22.9C22.2 13.6 21.8 13.2 21.8 12.5V6.8H26.6V4.8Z"
+              fill="#FFC700" />
+            <path
+              d="M41.1 4.6C39.5 4.6 38.2 5.4 37.6 6.7H37.5C36.9 5.5 35.7 4.6 34.1 4.6C32.7 4.6 31.6 5.4 31 6.4H30.9V4.8H29V15.4H31V10C31 8 32 6.5 33.6 6.5C35.1 6.5 36 7.5 36 9.1V15.4H38V9.8C38 7.4 39.4 6.5 40.6 6.5C42.1 6.5 43 7.5 43 9.1V15.4H45V8.9C45.1 6.4 43.6 4.6 41.1 4.6Z"
+              fill="#FFC700" />
+            <path d="M47.8 12.7C47.8 14.4 48.8 15.4 50.6 15.4H52.6V13.4H50.9C50.2 13.4 49.8 13 49.8 12.3V0H47.8V12.7Z"
+              fill="#FFC700" />
+            <path
+              d="M28.9 19.7C28 18.6 26.7 17.9 25 17.9C21.9 17.9 19.6 20.2 19.6 23.5C19.6 26.8 21.9 29.1 25 29.1C26.8 29.1 28 28.3 28.8 27.2H28.9V28.8H30.9V18.2H28.9V19.7ZM25.3 27.1C23.1 27.1 21.7 25.5 21.7 23.5C21.7 21.5 23.1 19.9 25.3 19.9C27.5 19.9 28.9 21.5 28.9 23.5C28.9 25.4 27.5 27.1 25.3 27.1Z"
+              fill="#FFC700" />
+            <path
+              d="M44.2 22C43.7 19.6 41.6 17.9 38.8 17.9C35.4 17.9 33.2 20.4 33.2 23.5C33.2 26.6 35.4 29.1 38.8 29.1C41.6 29.1 43.7 27.3 44.2 24.9H42.1C41.7 26.2 40.4 27.2 38.8 27.2C36.6 27.2 35.2 25.6 35.2 23.6C35.2 21.6 36.6 20 38.8 20C40.4 20 41.6 21 42.1 22.2H44.2V22Z"
+              fill="#FFC700" />
+            <path
+              d="M55.1 19.7C54.2 18.6 52.9 17.9 51.2 17.9C48.1 17.9 45.8 20.2 45.8 23.5C45.8 26.8 48.1 29.1 51.2 29.1C53 29.1 54.2 28.3 55 27.2H55.1V28.8H57.1V18.2H55.1V19.7ZM51.5 27.1C49.3 27.1 47.9 25.5 47.9 23.5C47.9 21.5 49.3 19.9 51.5 19.9C53.7 19.9 55.1 21.5 55.1 23.5C55.1 25.4 53.6 27.1 51.5 27.1Z"
+              fill="#FFC700" />
+            <path
+              d="M68.7 19.8C67.8 18.7 66.5 17.9 64.8 17.9C61.7 17.9 59.4 20.2 59.4 23.5C59.4 26.8 61.6 29.1 64.8 29.1C66.5 29.1 67.8 28.3 68.6 27.3H68.7V28.8H70.7V13.4H68.7V19.8ZM65.1 27.1C62.9 27.1 61.5 25.5 61.5 23.5C61.5 21.5 62.9 19.9 65.1 19.9C67.3 19.9 68.7 21.5 68.7 23.5C68.6 25.5 67.2 27.1 65.1 27.1Z"
+              fill="#FFC700" />
+            <path
+              d="M78.3 17.9C75 17.9 72.8 20.4 72.8 23.5C72.8 26.5 74.9 29.1 78.3 29.1C80.8 29.1 82.8 27.8 83.5 25.5H81.4C80.9 26.5 79.8 27.1 78.4 27.1C76.5 27.1 75.1 25.8 75 24.2H83.8C84 20.6 81.8 17.9 78.3 17.9ZM78.3 19.8C80 19.8 81.3 20.8 81.6 22.4H75.1C75.4 20.9 76.6 19.8 78.3 19.8Z"
+              fill="#FFC700" />
+            <path
+              d="M98.2 17.9C96.6 17.9 95.3 18.7 94.6 19.9H94.5C93.9 18.7 92.7 17.9 91.1 17.9C89.7 17.9 88.6 18.6 88 19.7V18.2H86.1V28.8H88.1V23.4C88.1 21.4 89.1 20 90.7 19.9C92.2 19.9 93.1 20.9 93.1 22.5V28.8H95.1V23.2C95.1 20.8 96.5 19.9 97.7 19.9C99.2 19.9 100.1 20.9 100.1 22.5V28.8H102.1V22.3C102.2 19.7 100.7 17.9 98.2 17.9Z"
+              fill="#FFC700" />
+            <path
+              d="M109.4 27L105.8 18.1H103.6L108.4 29.7C108.1 30.6 107.7 30.9 106.7 30.9H104.2V32.9H106.7C108.5 32.9 109.5 32.1 110.2 30.3L114.9 18.1H112.8L109.4 27Z"
+              fill="#FFC700" />
+          </svg>
         </a>
       </div>
     </div>
