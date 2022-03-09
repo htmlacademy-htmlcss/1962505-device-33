@@ -34,6 +34,7 @@
   --primary-white: #ffffff;
   --primary-white-03: rgba(255, 255, 255, 0.3);
   --primary-light: #f0f0f0;
+  --primary-basic-lightgray: #ebebeb;
   --primary-lightgray: #dcdcdc;
   --primary-lightgray-translucent: rgba(220, 220, 220, 0.5);
   --primary-dark: #444444;
@@ -71,6 +72,7 @@ body {
   margin: 0;
   padding: 10px 0;
   border: none;
+  z-index: 1;
   font-family: "Raleway", sans-serif;
   font-size: 18px;
   line-height: 21px;
@@ -204,6 +206,7 @@ body {
   left: 15px;
   content: '';
   display: block;
+  z-index: 2;
   width: 16px;
   height: 16px;
   background: url('../images/icons/default/search.svg') no-repeat;
@@ -299,8 +302,13 @@ body {
   background: url('../images/icons/default/login.svg') no-repeat;
 }
 
+.exit-link {
+  margin-left: 10px;
+  opacity: 0.3;
+}
+
 .navigation-main .navigation-item:not(:last-child) {
-  margin-right: 25px;
+  margin-right: 23px;
 }
 
 .navigation-wrapper {
@@ -482,7 +490,7 @@ body {
 .slider-slides {
   width: 1160px;
   display: flex;
-  margin-top: -38px;
+  margin-top: -36px;
 }
 
 .slider-text-wrapper {
@@ -710,7 +718,7 @@ right: 0;
   display: block;
   width: 160px;
   height: 160px;
-  margin-bottom: 32px;
+  margin-bottom: 33px;
   transition-duration: 0.4s;
 }
 
@@ -1156,7 +1164,7 @@ right: 0;
 .footer-navigation-link:focus,
 .footer-phone:focus,
 .footer-social-button:focus,
-.academy-logo:focus {
+.copyright:focus {
   outline: 2px solid var(--additional-purple);
   outline-offset: 1px;
 }
@@ -1365,12 +1373,30 @@ right: 0;
 }
 
 .breadcrumbs-item {
-  margin-right: 36px;
+  position: relative;
+  margin-right: 13px;
+  padding-right: 25px;
   line-height: 19px;
+}
+
+.breadcrumbs-item::after {
+  position: absolute;
+  top: 7px;
+  right: 3px;
+  content: '';
+  display: block;
+  width: 4px;
+  height: 8px;
+  background: url('../images/icons/right-arrow.svg') no-repeat;
 }
 
 .breadcrumbs-item:last-child {
   margin-right: 0;
+  padding-right: 0;
+}
+
+.breadcrumbs-item:last-child::after {
+  background: transparent;
 }
 
 .breadcrumbs-link {
@@ -1378,6 +1404,20 @@ right: 0;
   line-height: 19px;
   text-decoration: none;
   color: var(--primary-black);
+  transition-duration: 0.4s;
+}
+
+.breadcrumbs-link:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
+}
+
+.breadcrumbs-link:focus {
+  outline: 2px solid var(--additional-purple);
+  outline-offset: 1px;
 }
 
 .catalog-columns {
@@ -1425,12 +1465,19 @@ right: 0;
   color: var(--primary-black);
 }
 
+.filter-show-button {
+  width: 220px;
+}
+
 .catalog-sort {
+  display: flex;
+  align-items: center;
   width: 760px;
   padding: 20px 40px;
 }
 
 .catalog-sort-text {
+  margin-right: 195px;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   line-height: 19px;
@@ -1442,6 +1489,67 @@ right: 0;
 .select-control {
   font: inherit;
   color: var(--primary-black);
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select-control:focus {
+  outline: none;
+}
+
+.select-wrapper {
+  display: inline-block;
+  position: relative;
+  margin-right: 210px;
+  padding-right: 43px;
+}
+
+.select-wrapper:focus-within {
+  outline: 2px solid var(--additional-purple);
+  outline-offset: 1px;
+}
+
+.select-wrapper::after {
+  position: absolute;
+  top: 11px;
+  right: 2px;
+  content: '';
+  width: 13px;
+  height: 7px;
+  background: url('../images/icons/default/arrow-down.svg') no-repeat;
+}
+
+.sort-button {
+  width: 20px;
+  height: 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.3;
+  transition-duration: 0.4s;
+}
+
+.sort-from-bottom {
+  margin-right: 10px;
+  background: transparent url('../images/icons/default/arrow-up.svg') no-repeat center;
+}
+
+.sort-from-top {
+  background: transparent url('../images/icons/default/arrow-down2.svg') no-repeat center;
+}
+
+.sort-button:hover {
+  opacity: 0.6;
+}
+
+.sort-button:active {
+  opacity: 1;
+}
+
+.sort-button:focus {
+  outline: 2px solid var(--additional-purple);
+  outline-offset: 1px;
 }
 
 .product-list {
@@ -1456,15 +1564,88 @@ right: 0;
 }
 
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 360px;
 }
 
+.new-product::before {
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  content: '';
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url('../images/catalog/new-sticker.svg') no-repeat;
+  opacity: 0.6;
+}
+
 .product-card-link {
+  position: relative;
   display: block;
   text-decoration: none;
   color: var(--primary-black);
+}
+
+.product-image-link::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+  content: '';
+  background-color: var(--primary-light);
+  opacity: 0;
+  transition-duration: 0.4s;
+}
+
+.catalog-more-button {
+  position: absolute;
+  top: 170px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 220px;
+  opacity: 0;
+  transition-duration: 0.4s;
+
+}
+
+.catalog-more-button:hover {
+  background-color: transparent;
+}
+
+.product-card:hover .product-image-link::before {
+  opacity: 0.8;
+}
+
+.product-card:hover .catalog-more-button {
+  opacity: 1;
+}
+
+.product-card:hover .product-card-title,
+.product-card:hover .product-price {
+  opacity: 0.6;
+}
+
+.product-card:active .catalog-more-button::after {
+  background-color: var(--additional-yellow-hover);
+}
+
+.product-card:active .product-card-title,
+.product-card:active .product-price {
+  opacity: 0.3;
+}
+
+.product-card-link:focus {
+  outline: none;
+}
+
+.product-card:focus-within {
+  outline: 2px solid var(--additional-purple);
+  outline-offset: 1px;
 }
 
 .product-card-image {
@@ -1485,11 +1666,13 @@ right: 0;
   font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.02em;
+  transition-duration: 0.4s;
 }
 
 .product-price {
   font: inherit;
   line-height: 21px;
+  transition-duration: 0.4s;
 }
 
 .upload-more-button {
@@ -1507,12 +1690,28 @@ right: 0;
 .pagination {
   display: flex;
   justify-content: space-between;
+  background-color: var(--primary-basic-lightgray);
+}
+
+.pagination-button {
+  padding: 25px;
+  line-height: 18px;
+}
+
+.pagination-button:hover {
   background-color: var(--primary-lightgray);
 }
 
-.pagination-prev,
+.pagination-button:active .pagination-button-text {
+  opacity: 0.3;
+}
+
+.pagination-button:focus {
+  background-color: var(--primary-light);
+}
+
 .pagination-next {
-  padding: 25px;
+  padding-right: 21px;
 }
 
 .pagination-list {
@@ -1538,5 +1737,23 @@ right: 0;
   line-height: 20px;
   text-decoration: none;
   color: var(--primary-dark);
-  opacity: 30%;
+  opacity: 0.3;
+  transition-duration: 0.4s;
+}
+
+.pagination-link:hover {
+  opacity: 1;
+}
+
+.pagination-link:active {
+  opacity: 0.1;
+}
+
+.pagination-link:focus {
+  outline: 2px solid var(--additional-purple);
+  outline-offset: 1px;
+}
+
+.pagination-link-current {
+  opacity: 0.6;
 }
