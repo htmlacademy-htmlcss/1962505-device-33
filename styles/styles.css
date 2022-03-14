@@ -1772,10 +1772,6 @@ right: 0;
 
 }
 
-.catalog-more-button:hover {
-  background-color: transparent;
-}
-
 .product-card:hover .product-image-link::before {
   opacity: 0.8;
 }
